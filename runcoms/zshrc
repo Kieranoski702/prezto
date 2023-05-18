@@ -12,3 +12,27 @@ fi
 
 # Add gituhub copilot cli alias
 eval "$(github-copilot-cli alias -- "$0")"
+
+# Add $HOME/.idris2/bin to $PATH
+export PATH="$HOME/.pack/bin:$HOME/.idris2/bin:$PATH"
+
+# Add idris2 autocompletion
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+eval "$(idris2 --bash-completion-script idris2)"
+eval "$(pack completion-script pack)"
+
+# Add ghcup to $PATH
+export PATH="$HOME/.ghcup/bin:$PATH"
+
+# Add cabal to $PATH
+export PATH="$HOME/.cabal/bin:$PATH"
+
+# Add rustup to $PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Add go to $PATH
+export PATH="/usr/local/go/bin:$PATH"
+
+# Add $HOME/.local/bin to $PATH
+export PATH="$HOME/.local/bin:$PATH"
